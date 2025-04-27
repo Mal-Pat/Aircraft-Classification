@@ -1,11 +1,12 @@
 import torch
 
-CHECKPOINT_DIR = "checkpoints"
+PROJECT_DIR = "project_malhar_alpesh_patel"
+CHECKPOINT_DIR = f"{PROJECT_DIR}/checkpoints"
 CHECKPOINT_FILE = f"{CHECKPOINT_DIR}/final_weights.pth"
-DATA_EXAMPLE_DIR = "data"
+DATA_EXAMPLE_DIR = f"{PROJECT_DIR}/data"
 
 # Path to the main data
-TRAIN_DATA_DIR = "CompleteData"
+TRAIN_DATA_DIR = f"{PROJECT_DIR}/CompleteData"
 
 RESIZE_HEIGHT = 128
 RESIZE_WIDTH = 128
@@ -25,7 +26,7 @@ NORM_STD = [0.229, 0.224, 0.225]
 # Training parameters
 LEARNING_RATE = 0.001
 BATCH_SIZE = 32
-NUM_EPOCHS = 2
+NUM_EPOCHS = 30
 SHUFFLE_DATA = True
 
 # My PC had cuda available on the Nvidia GPU
@@ -33,5 +34,6 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 NUM_WORKERS = 2
 
-# Seed for reproducibility
-SEED = 42
+# Seed for reproducibility, in case needed
+# It has not been used in the code currently
+SEED = 100
