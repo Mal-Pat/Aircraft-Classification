@@ -3,8 +3,8 @@ from PIL import Image
 import os
 
 import config
-from interface import TheModel
-from interface import the_datatransform
+from model import AircraftCNN as TheModel
+from dataset import data_transforms as the_datatransform
 
 def load_model(model_path=config.CHECKPOINT_FILE, num_classes=config.NUM_CLASSES, device=config.DEVICE):
 
@@ -13,7 +13,8 @@ def load_model(model_path=config.CHECKPOINT_FILE, num_classes=config.NUM_CLASSES
     print(f"Model weights loaded successfully from {model_path}")
 
     model.to(device)
-    model.eval() # Set model to evaluation mode
+    # Set model to evaluation mode
+    model.eval()
     return model
 
 def preprocess_image(image_path, transform=the_datatransform):
