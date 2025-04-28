@@ -1,5 +1,4 @@
 CompleteData/
 __pycache__/
-test.py
 test_predict.py
 test_train.py
